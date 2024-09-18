@@ -1,0 +1,15 @@
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\bin\Debug\net8.0\primeraPrueba_C-.exe
+C:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\bin\Debug\net8.0\primeraPrueba_C-.deps.json
+C:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\bin\Debug\net8.0\primeraPrueba_C-.runtimeconfig.json
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\bin\Debug\net8.0\primeraPrueba_C-.dll
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\bin\Debug\net8.0\primeraPrueba_C-.pdb
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.GeneratedMSBuildEditorConfig.editorconfig
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.AssemblyInfoInputs.cache
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.AssemblyInfo.cs
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.csproj.CoreCompileInputs.cache
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.sourcelink.json
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.dll
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\refint\primeraPrueba_C-.dll
+c:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.pdb
+C:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\primeraPrueba_C-.genruntimeconfig.cache
+C:\Users\adriag\Desktop\DAM\2DAM\PSP\primeraPrueba_C-\obj\Debug\net8.0\ref\primeraPrueba_C-.dll
