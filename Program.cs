@@ -1,6 +1,4 @@
-﻿// See https://aka.ms/new-console-template for more information
-
-using Inventory;
+﻿using Inventory;
 
 // Añadir:
 // - Borrar el inventario de alguien cuando muere
@@ -40,7 +38,7 @@ namespace Inventory{
         // Mostrar estadisticas y objetos del inventario
         public void ShowStats()
         {
-            Console.WriteLine($"- Nombre: {Name}\n- Salud: {CurrentHitPoints} ({MaxHitPoints}max)\n- Armadura: {BaseArmor}\n- Daño de ataque: {BaseDamage}\n- Inventario:");
+            Console.WriteLine($"Estadisticas jugad@r:\n - Nombre: {Name}\n - Salud: {CurrentHitPoints} ({MaxHitPoints}max)\n - Armadura: {BaseArmor}\n - Daño de ataque: {BaseDamage}\n - Inventario:");
 
             if (Inventory.Count == 0)
             {
@@ -150,6 +148,7 @@ namespace Inventory{
         // Implementamos apply de la interaz, para aumentar el daño base
         public override void Apply(Character character)
         {
+            Console.WriteLine($"{character.Name} se ha equipado un hacha");
             character.BaseDamage += this.Damage;
         }
     }
@@ -163,6 +162,7 @@ namespace Inventory{
         // Implementamos apply de la interaz, para aumentar el daño base
         public override void Apply(Character character)
         {
+            Console.WriteLine($"{character.Name} se ha equipado una espada");
             character.BaseDamage += this.Damage;
         }
     }
@@ -191,6 +191,7 @@ namespace Inventory{
 
         public override void Apply(Character character)
         {
+            Console.WriteLine($"{character.Name} se ha equipado un escudo");
             character.BaseArmor += this.Armor;
         }
     }
@@ -203,6 +204,7 @@ namespace Inventory{
 
         public override void Apply(Character character)
         {
+            Console.WriteLine($"{character.Name} se ha equipado un casco");
             character.BaseArmor += this.Armor;
         }
     }
@@ -247,6 +249,9 @@ class Program
         // Curaciones
         ch1.Heal(20);  // Adri se cura 20 puntos de vida
         ch3.Heal(15);  // Lucia se cura 15 puntos de vida
+        ch3.Heal(200);
+
+        ch3.ShowStats();
 
         ch1.ShowStats();
 
@@ -261,22 +266,4 @@ class Program
 }
 
 
-/*
-// Crear pj
-        Character ch1 = new Character("adri", 50, 10, 5);
-        Character ch2 = new Character("pedro", 100, 34, 2);
-
-        // Equpiar arma
-        IItem axe = new Axe();
-        axe.Apply(ch1);
-
-        // Equipar escudo
-        IItem shield = new Shield();
-        shield.Apply(ch1);
-
-        ch1.ReceiveDamage(5);
-        ch1.Attack(ch2);
-
-        //ch1.Heal(20);
-*/
 
