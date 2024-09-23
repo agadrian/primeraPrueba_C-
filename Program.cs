@@ -143,7 +143,8 @@ namespace Inventory{
     // Clase concreta de Weapon
     public class Axe : Weapon
     {
-        public Axe() : base("Axe", 15){} // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
+        // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
+        public Axe() : base("Axe", 15){} 
 
         // Implementamos apply de la interaz, para aumentar el daño base
         public override void Apply(Character character)
@@ -157,6 +158,7 @@ namespace Inventory{
     // Clase concreta de Weapon
     public class Sword : Weapon
     {
+        // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
         public Sword(): base("Sword", 20){}
 
         // Implementamos apply de la interaz, para aumentar el daño base
@@ -174,7 +176,7 @@ namespace Inventory{
         public string Name { get; set; }
         public int Armor { get; set; }
 
-        // Constructor que difine el nombre y daño
+        
         public Protection(string name, int armor){
             this.Name = name;
             this.Armor = armor;
@@ -186,7 +188,7 @@ namespace Inventory{
 
     public class Shield : Protection
     {
-
+        // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
         public Shield() : base("Shield", 15){}
 
         public override void Apply(Character character)
@@ -200,6 +202,7 @@ namespace Inventory{
     public class Helmet : Protection
     {
 
+        // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
         public Helmet() : base("Helmet", 10){}
 
         public override void Apply(Character character)
