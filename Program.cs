@@ -26,7 +26,6 @@ namespace Inventory{
         // Constructor
         public Character(string name, int maxHitPoints, int baseDamage, int baseArmor)
         {
-
             this.Name = name;
             this.MaxHitPoints = maxHitPoints;
             this.CurrentHitPoints = maxHitPoints; // Empezara con la vida completa
@@ -56,7 +55,7 @@ namespace Inventory{
 
 
         // Añadir al inventario un  item de tipo IItem. Tambien se hace uso del Apply a sí mismo.
-        public void AddItem(IItem item)
+        public void AddItem(IItem item) // => Inventory.Add(item);
         {
             Inventory.Add(item);
             item.Apply(this);
@@ -131,6 +130,13 @@ namespace Inventory{
             }else{
                 Console.WriteLine($"{Name} se ha curado {amount} puntos de salud. Vida actual: {CurrentHitPoints}");
             }
+        }
+
+        public override string ToString()
+        {
+            string hola = $"{Name} ({CurrentHitPoints})";
+            
+            return hola;
         }
     }
 
@@ -222,6 +228,8 @@ namespace Inventory{
             character.BaseArmor += this.Armor;
         }
     }
+    
+   
 }
 
 class Program
