@@ -2,6 +2,12 @@ namespace primeraPrueba_C_.TareaInventario;
 
 public class Character
     {
+        
+        public const int DefaultMaxHp = 10;
+        public const int DefaultBaseDamage = 1;
+        public const int DefaultBaseArmor = 0;
+        
+        
         public string Name { get; set; }
         public int MaxHitPoints { get; set; }
         public int CurrentHitPoints { get; set; }
@@ -12,8 +18,12 @@ public class Character
 
 
         // Constructor
-        public Character(string name, int maxHitPoints, int baseDamage, int baseArmor)
-        {
+        public Character(
+            string name,
+            int maxHitPoints = DefaultMaxHp,
+            int baseDamage = DefaultBaseDamage,
+            int baseArmor = DefaultBaseArmor
+            ) {
             this.Name = name;
             this.MaxHitPoints = maxHitPoints;
             this.CurrentHitPoints = maxHitPoints; // Empezara con la vida completa

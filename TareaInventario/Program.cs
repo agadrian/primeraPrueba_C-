@@ -6,8 +6,8 @@ class Program
     static void Main(string[] args)
     {
         // Crear personajes
-        Character player1 = new Character("Aragorn", 100, 45, 5);
-        Character player2 = new Character("Legolas", 90, 52, 3);
+        Character player1 = new Character("Aragorn");
+        Character player2 = new Character("Legolas");
 
         // Mostrar estadísticas iniciales
         Console.WriteLine("\n*** Estadísticas iniciales ***");
