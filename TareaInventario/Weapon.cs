@@ -15,7 +15,11 @@ public abstract class Weapon : IItem
         this.Damage = damage;
     }
 
-    public abstract void Apply(Character character);
+    // Mejor usar el apply aqui para aplicar cada cosa, y no en cada calse concreta de Weapon
+    public void Apply(Character character)
+    {
+        character.BaseDamage += Damage;
+    }
     
     public override string ToString()
     {

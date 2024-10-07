@@ -13,6 +13,13 @@ class Program
         Console.WriteLine("\n*** Estadísticas iniciales ***");
         Console.WriteLine(player1);
         Console.WriteLine(player2);
+
+        
+        var ringMinionDragon = new RingMinionGenerator("Dragon", 15);
+        player1.AddItem(ringMinionDragon);
+        Minion createdMinionDragon = ringMinionDragon.CreatedMinion;
+        
+        
         
 
         // Equipar armas
@@ -30,6 +37,7 @@ class Program
 
         player1.AddItem(shield);  // Aragorn se equipa un escudo
         player2.AddItem(helmet);  // Legolas se equipa un casco
+        player2.AddItem(shield);  // Legolas se equipa un escudo
 
         // Mostrar estadísticas tras equipamiento
         Console.WriteLine("\n*** Estadísticas después de equipar ***");
@@ -46,7 +54,23 @@ class Program
         // Aragorn se defiende
         Console.WriteLine("\nTurno de Aragorn - Se defiende");
         player1.Defense();
-
+        
+        
+        
+        
+        // Elimino el minion creado al J1 y lo vuelvo a crear para ver que funcione
+        Console.WriteLine($"\nEliminar minion {createdMinionDragon.Name}");
+        player1.RemoveMinion(createdMinionDragon);
+        Console.WriteLine($"Num de minions de {player1.Name}:  {player1.GetMinions().Count}");
+        
+        Console.WriteLine($"\nAñadir minion {createdMinionDragon.Name}");
+        ringMinionDragon.Apply(player1);
+        Console.WriteLine($"Num de minions de {player1.Name}:  {player1.GetMinions().Count}");
+        
+        
+        
+        
+        
         // Aragorn contraataca
         Console.WriteLine("\nTurno de Aragorn - Ataca");
         player1.Attack(player2);
@@ -63,7 +87,10 @@ class Program
         Console.WriteLine("\n*** Estadísticas después del combate ***");
         Console.WriteLine(player1);
         Console.WriteLine(player2);
-
+        
+        Console.WriteLine($"\nEliminar minion {createdMinionDragon.Name}");
+        player1.RemoveMinion(createdMinionDragon);
+        
         // Ataques adicionales 
         Console.WriteLine("\nTurno de Aragorn - Ataque final");
         player1.Attack(player2);

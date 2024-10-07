@@ -14,7 +14,10 @@ public abstract class Protection : IItem
         this.Armor = armor;
     }
 
-    public abstract void Apply(Character character);
+    public virtual void Apply(Character character)
+    {
+        character.BaseArmor += this.Armor;
+    }
 
     public override string ToString()
     {

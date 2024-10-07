@@ -2,11 +2,9 @@ namespace primeraPrueba_C_.TareaInventario;
 
 public class Character
     {
-        
-        public const int DefaultMaxHp = 10;
+        public const int DefaultMaxHp = 25;
         public const int DefaultBaseDamage = 1;
-        public const int DefaultBaseArmor = 0;
-        
+        public const int DefaultBaseArmor = 0;        
         
         public string Name { get; set; }
         public int MaxHitPoints { get; set; }
@@ -14,7 +12,9 @@ public class Character
         public int BaseDamage { get; set; }
         public int BaseArmor { get; set; }
 
-        private List<IItem> Inventory { get; set; }
+        private List<IItem> _Inventory { get; set; }
+        private List<Minion> _Minions { get; set; }
+        
 
 
         // Constructor
@@ -23,23 +23,49 @@ public class Character
             int maxHitPoints = DefaultMaxHp,
             int baseDamage = DefaultBaseDamage,
             int baseArmor = DefaultBaseArmor
-            ) {
+            )
+        {
             this.Name = name;
             this.MaxHitPoints = maxHitPoints;
             this.CurrentHitPoints = maxHitPoints; // Empezara con la vida completa
             this.BaseDamage = baseDamage;
             this.BaseArmor = baseArmor;
-            this.Inventory = new List<IItem>();
+            this._Inventory = new List<IItem>();
+            this._Minions = new List<Minion>();
         }
         
+        // Metodo para añadir minion al listado
+        public void AddMinion(Minion minion)
+        {
+            this._Minions.Add(minion);
+            BaseDamage += minion.AttackDamage;
+        }
+        
+        // Metodo para quitar el minion de la lista
+        public void RemoveMinion(Minion minion)
+        {
+            if (_Minions.Contains(minion))
+            {
+                this._Minions.Remove(minion);
+                this.
+                BaseDamage -= minion.AttackDamage;
+            }
+        }
 
+        public List<Minion> GetMinions()
+        {
+            return this._Minions;
+        }
+        
+        
 
         // Añadir al inventario un  item de tipo IItem. Tambien se hace uso del Apply a sí mismo.
         public void AddItem(IItem item) // => Inventory.Add(item);
         {
-            Inventory.Add(item);
+            _Inventory.Add(item);
             item.Apply(this);
         }
+        
 
 
         // Metodo para recibir daño
@@ -64,19 +90,20 @@ public class Character
             if (enemy.CurrentHitPoints <= 0){ //Comprobar si ya esta muerto
                 return 0;
             }
-
-            int totalDamage = enemy.ReceiveDamage(BaseDamage);
+            
+            int damageFinal = enemy.ReceiveDamage(BaseDamage);
             
             if (enemy.CurrentHitPoints == 0){
                 enemy.DeleteInventory();
             }
             
-            return totalDamage;
+            Console.WriteLine($"Ataque con {damageFinal}hp");
+            return damageFinal;
         }
 
         private void DeleteInventory()
         {
-            Inventory.Clear();
+            _Inventory.Clear();
             BaseArmor = 0;
             BaseDamage = 0;
             MaxHitPoints = 0;
@@ -107,11 +134,17 @@ public class Character
             string msg = $"Pj: {Name} ({CurrentHitPoints}hp)\n";
             msg += $" Ataque: {BaseDamage}\n";
             msg += $" Defensa: {BaseArmor}\n";
-            msg += $" Inventario:";
-            
-            foreach (var item in Inventory)
+            msg += $" Lista de minions: \n";
+            foreach (var minion in _Minions)
             {
-                msg += $" * {item}";
+                msg += $" * {minion}\n";
+            }
+            
+            msg += $" Inventario:\n";
+            
+            foreach (var item in _Inventory)
+            {
+                msg += $" * {item}\n";
             }
             
             return msg;

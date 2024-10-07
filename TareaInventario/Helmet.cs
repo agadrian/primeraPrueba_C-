@@ -6,8 +6,5 @@ public class Helmet : Protection
     // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
     public Helmet() : base("Helmet", ArmorDefault){}
 
-    public override void Apply(Character character)
-    {
-        character.BaseArmor += this.Armor;
-    }
+    
 }

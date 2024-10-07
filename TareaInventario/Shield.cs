@@ -6,8 +6,5 @@ public class Shield : Protection
     // Llama al constructor base (padre) con los parametros iniciales para cuando se cree la instancia
     public Shield() : base("Shield", ArmorDefault){}
 
-    public override void Apply(Character character)
-    {
-        character.BaseArmor += this.Armor;
-    }
+    
 }
